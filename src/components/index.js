@@ -5,6 +5,12 @@ const GoogleFonts = () => {
     const API_KEY = process.env.REACT - APP - API - GOOGLE - FONTS;
     const url = `https://www.googleapis.com/webfonts/v1/webfonts?key=${API_KEY}`;
   });
+
+  return (
+    <div>
+      test
+    </div>
+  );
 };
 
 export default GoogleFonts;
