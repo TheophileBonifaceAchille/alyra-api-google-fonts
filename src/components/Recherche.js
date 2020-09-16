@@ -10,12 +10,11 @@ const Recherche = () => {
         <textarea
           id="text"
           className="form-control"
-          defaultValue="Portez ce vieux whisky au juge blond qui fume !?"
+          defaultValue="Portez ce vieux whisky au juge blond qui fume !? 0123456789"
           rows="4"
           cols="50"
         ></textarea>
       </label>
-      
     </div>
   );
 };

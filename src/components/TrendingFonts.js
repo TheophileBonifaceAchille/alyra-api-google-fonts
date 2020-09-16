@@ -1,10 +1,11 @@
 import React from "react";
+import {FilterContext} from "./../context/filter"
 
 const TrendingFonts = () => {
   return (
     <>
       <h2 className="mb-3">
-        <span className="badge bg-danger">Les plus populaires</span>
+        <span className="badge bg-danger m-3">Les plus populaires</span>
       </h2>
       <article className="col-lg-6 mb-3">
         <div className="shadow p-3">
