@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
 import GoogleFontLoader from "./GoogleFontLoader";
-import { SizeContext } from "./../context/SizeContext";
+import { SlideContext } from "../context/SlideContext";
 import { PreviewContext } from "./../context/PreviewContext";
-
 
 const MostRecent = () => {
   const [recentFonts, setrecentFonts] = useState([]);
-  const { size } = useContext(SizeContext);
+  const { slide } = useContext(SlideContext);
   const { previewText } = useContext(PreviewContext);
 
   useEffect(() => {
@@ -27,9 +26,7 @@ const MostRecent = () => {
         alert(error.message);
       });
   }, []);
-
-  console.log(recentFonts);
-
+  
   return (
     <section className="row mb-5">
       <hr />
@@ -60,7 +57,7 @@ const MostRecent = () => {
                 className="sample"
                 style={{
                   fontFamily: `${el.family}, monospaced`,
-                  fontSize: `${size}px`,
+                  fontSize: `${slide}px`,
                 }}
               >
                 {previewText}

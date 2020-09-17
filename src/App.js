@@ -6,7 +6,7 @@ import MostRecent from "./components/MostRecent";
 import TrandingFonts from "./components/TrendingFonts";
 import MostPopular from "./components/MostPopular";
 import Footer from "./components/Footer";
-import SizeContextProvider from "./context/SizeContext";
+import SlideContextProvider from "./context/SlideContext";
 import ModeContextProvider from "./context/PreviewContext";
 
 function App() {
@@ -16,21 +16,21 @@ function App() {
       <main className="container mb-5">
         <div className="min-vh-100">
           <div className="row my-5 ">
-            <SizeContextProvider>
+            <SlideContextProvider>
               <ModeContextProvider>
-              <div className="col-lg-3">
-                <div style={{ position: "sticky", top: 0 }}>
-                  <Recherche />
-                  <RechercheSlide />
+                <div className="col-lg-3">
+                  <div style={{ position: "sticky", top: 0 }}>
+                    <Recherche />
+                    <RechercheSlide />
+                  </div>
                 </div>
-              </div>
-              <div className="col-lg-9">
-                <MostRecent />
-                <TrandingFonts />
-                <MostPopular />
-              </div>
+                <div className="col-lg-9">
+                  <MostRecent />
+                  <TrandingFonts />
+                  <MostPopular />
+                </div>
               </ModeContextProvider>
-            </SizeContextProvider>
+            </SlideContextProvider>
           </div>
         </div>
       </main>
