@@ -3,6 +3,9 @@ import React from "react";
 //const style = {position: sticky, top: "0px" };
 
 const Recherche = () => {
+  const defaultValue =
+    "Portez ce vieux whisky au juge blond qui fume !? 0123456789";
+
   return (
     <div className="mb-3">
       <label htmlFor="text" className="form-label font-weight-bold mb-3">
@@ -10,7 +13,7 @@ const Recherche = () => {
         <textarea
           id="text"
           className="form-control"
-          defaultValue="Portez ce vieux whisky au juge blond qui fume !? 0123456789"
+          defaultValue={defaultValue}
           rows="4"
           cols="50"
         ></textarea>

@@ -6,25 +6,31 @@ import MostRecent from "./components/MostRecent";
 import TrandingFonts from "./components/TrendingFonts";
 import MostPopular from "./components/MostPopular";
 import Footer from "./components/Footer";
+import SizeContextProvider from "./context/SizeContext";
+import ModeContextProvider from "./context/PreviewContext";
 
 function App() {
   return (
     <>
       <Header />
       <main className="container mb-5">
-        <div className="container min-vh-100">
+        <div className="min-vh-100">
           <div className="row my-5 ">
-            <div className="col-lg-3">
-              <Recherche />
-              <RechercheSlide />
-            </div>
-            <div className="col-lg-9">
-              <section className="row mb-5">
+            <SizeContextProvider>
+              <ModeContextProvider>
+              <div className="col-lg-3">
+                <div style={{ position: "sticky", top: 0 }}>
+                  <Recherche />
+                  <RechercheSlide />
+                </div>
+              </div>
+              <div className="col-lg-9">
                 <MostRecent />
                 <TrandingFonts />
                 <MostPopular />
-              </section>
-            </div>
+              </div>
+              </ModeContextProvider>
+            </SizeContextProvider>
           </div>
         </div>
       </main>
