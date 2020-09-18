@@ -3,7 +3,7 @@ import GoogleFontLoader from "./GoogleFontLoader";
 import { SlideContext } from "../context/SlideContext";
 import { PreviewContext } from "./../context/PreviewContext";
 
-const MostRecent = () => {
+const MostRecent = (sort = "data") => {
   const [recentFonts, setrecentFonts] = useState([]);
   const { slide } = useContext(SlideContext);
   const { previewText } = useContext(PreviewContext);
@@ -25,8 +25,8 @@ const MostRecent = () => {
       .catch((error) => {
         alert(error.message);
       });
-  }, []);
-  
+  }, [sort]);
+
   return (
     <section className="row mb-5">
       <hr />
@@ -35,43 +35,46 @@ const MostRecent = () => {
       </h2>
       {recentFonts.map((el) => {
         return (
-          <article className="col-lg-6 mb-3" key={el.family}>
-            <div className="shadow p-3">
-              <GoogleFontLoader
-                fonts={[
-                  {
-                    font: `${el.family}`,
-                    weights: [400],
-                  },
-                ]}
-                subsets={[]}
-              />
-              <h2 className="h6 d-flex align-items-center justify-content-between">
-                <span>{el.family}</span>
-                <small>{`${el.variants.length} variant(s)`}</small>
-              </h2>
-              <p>
-                <span className="badge bg-dark">{el.category}</span>
-              </p>
-              <p
-                className="sample"
-                style={{
-                  fontFamily: `${el.family}, monospaced`,
-                  fontSize: `${slide}px`,
-                }}
-              >
-                {previewText}
-              </p>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                className="text-danger"
-                href={`https://fonts.google.com/specimen/${el.family}`}
-              >
-                Voir sur Google Fonts (ouvre un nouveau tab)
-              </a>
+          
+            <div className="col-lg-6 mb-3" key={el.family}>
+              <div className="shadow p-3 card card-body">
+                <GoogleFontLoader
+                  fonts={[
+                    {
+                      font: `${el.family}`,
+                      weights: [400],
+                    },
+                  ]}
+                  subsets={[]}
+                />
+                <h2 className="h6 d-flex align-items-center justify-content-between">
+                  <span>{el.family}</span>
+                  <small>{`${el.variants.length} variant(s)`}</small>
+                </h2>
+                <p>
+                  <span className="badge bg-dark">{el.category}</span>
+                </p>
+                <p
+                  className="sample"
+                  style={{
+                    fontFamily: `${el.family}, monospaced`,
+                    fontSize: `${slide}px`,
+                  }}
+                >
+                  {previewText}
+                </p>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-danger"
+                  href={`https://fonts.google.com/specimen/${el.family
+                    .split(" ")
+                    .join("+")}`}
+                >
+                  Voir sur Google Fonts (ouvre un nouveau tab)
+                </a>
+              </div>
             </div>
-          </article>
         );
       })}
     </section>

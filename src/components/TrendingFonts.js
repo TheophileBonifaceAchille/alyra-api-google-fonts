@@ -3,7 +3,7 @@ import GoogleFontLoader from "./GoogleFontLoader";
 import { SlideContext } from "../context/SlideContext";
 import { PreviewContext } from "./../context/PreviewContext";
 
-const TrendingFonts = () => {
+const TrendingFonts = (sort = "data") => {
   const [trendingFont, settrendingFont] = useState([]);
   const { slide } = useContext(SlideContext);
   const { previewText } = useContext(PreviewContext);
@@ -25,7 +25,7 @@ const TrendingFonts = () => {
       .catch((error) => {
         alert(error.message);
       });
-  }, []);
+  }, [sort]);
 
   return (
     <section className="row mb-5">
@@ -66,7 +66,9 @@ const TrendingFonts = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 className="text-danger"
-                href={`https://fonts.google.com/specimen/${el.family}`}
+                href={`https://fonts.google.com/specimen/${el.family
+                  .split(" ")
+                  .join("+")}`}
               >
                 Voir sur Google Fonts (ouvre un nouveau tab)
               </a>

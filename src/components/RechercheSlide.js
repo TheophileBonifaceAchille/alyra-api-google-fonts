@@ -18,10 +18,10 @@ const RechercheSlide = () => {
         className="form-range"
         id="range"
         onChange={slideHandleChange}
-        /* min="8"
+        min="8"
         max="48"
         step="1"
-        value="20" */
+        
       ></input>
     </>
   );

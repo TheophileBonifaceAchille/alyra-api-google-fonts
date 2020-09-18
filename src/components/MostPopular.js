@@ -3,7 +3,7 @@ import GoogleFontLoader from "./GoogleFontLoader";
 import { SlideContext } from "../context/SlideContext";
 import { PreviewContext } from "./../context/PreviewContext";
 
-const MostPopular = () => {
+const MostPopular = (sort = "data") => {
   const [popularFonts, setPopularFonts] = useState([]);
   const { slide } = useContext(SlideContext);
   const { previewText } = useContext(PreviewContext);
@@ -25,7 +25,7 @@ const MostPopular = () => {
       .catch((error) => {
         alert(error.message);
       });
-  }, []);
+  }, [sort]);
 
   return (
     <section className="row mb-5">
