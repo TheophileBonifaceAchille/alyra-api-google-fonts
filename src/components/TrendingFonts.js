@@ -36,7 +36,7 @@ const TrendingFonts = (sort = "data") => {
       {trendingFont.map((el) => {
         return (
           <article className="col-lg-6 mb-3" key={el.family}>
-            <div className="shadow p-3">
+            <div className="shadow p-3 card">
               <GoogleFontLoader
                 fonts={[
                   {
@@ -51,7 +51,9 @@ const TrendingFonts = (sort = "data") => {
                 <small>{`${el.variants.length} variant(s)`}</small>
               </h2>
               <p>
-                <span className="badge bg-dark">{el.category}</span>
+                <span className="badge bg-dark">
+                  {el.category.toUpperCase()}
+                </span>
               </p>
               <p
                 className="sample"

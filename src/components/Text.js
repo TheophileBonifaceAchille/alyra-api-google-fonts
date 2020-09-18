@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { PreviewContext } from "./../context/PreviewContext";
+import { PreviewContext } from "../context/PreviewContext";
 
 
 //const style = {position: sticky, top: "0px" };

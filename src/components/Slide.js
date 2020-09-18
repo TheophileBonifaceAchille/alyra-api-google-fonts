@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import { SlideContext } from "../context/SlideContext";
 
-//const style = {position: sticky, top: "0px" };
-
 const RechercheSlide = () => {
   const { setSlide } = useContext(SlideContext);
   const slideHandleChange = (event) => {
@@ -21,7 +19,8 @@ const RechercheSlide = () => {
         min="8"
         max="48"
         step="1"
-        
+        defaultValue=""
+
       ></input>
     </>
   );
