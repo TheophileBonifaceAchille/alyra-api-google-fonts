@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import GoogleFontLoader from "./GoogleFontLoader";
+import GoogleFontLoader from "react-google-font-loader";
 import { SlideContext } from "../context/SlideContext";
 import { PreviewContext } from "./../context/PreviewContext";
 
@@ -51,7 +51,9 @@ const MostPopular = (sort = "data") => {
                 <small>{`${el.variants.length} variant(s)`}</small>
               </h2>
               <p>
-                <span className="badge bg-dark">{el.category.toUpperCase()}</span>
+                <span className="badge bg-dark">
+                  {el.category.toUpperCase()}
+                </span>
               </p>
               <p
                 className="sample"
@@ -60,7 +62,7 @@ const MostPopular = (sort = "data") => {
                   fontSize: `${slide}px`,
                 }}
               >
-                {previewText}
+                {previewText.el}
               </p>
               <a
                 rel="noopener noreferrer"

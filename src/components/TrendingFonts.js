@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import GoogleFontLoader from "./GoogleFontLoader";
+import GoogleFontLoader from "react-google-font-loader";
 import { SlideContext } from "../context/SlideContext";
 import { PreviewContext } from "./../context/PreviewContext";
 

@@ -1,15 +1,13 @@
 import React, { useContext } from "react";
 import { PreviewContext } from "../context/PreviewContext";
 
-
 //const style = {position: sticky, top: "0px" };
 
 const Recherche = () => {
   const { previewText, setPreviewText } = useContext(PreviewContext);
   const textHandleChange = (event) => {
-    setPreviewText(event.target.value)
+    setPreviewText(event.target.value);
   };
-  
 
   return (
     <div className="mb-3">
